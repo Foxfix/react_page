@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import CommentList from './CommentList';
 import PropTypes from 'prop-types';
 import toggleOpen from '../decorators/toggleOpen';
 
-class Article extends Component {
+class Article extends PureComponent {
     static propTypes = {
         article: PropTypes.shape({
             id: PropTypes.string.isRequired,
@@ -12,11 +12,13 @@ class Article extends Component {
         }).isRequired
     };
 
-    componentWillMount() {
-    }
+    state = {
+        updateIndex: 0
+    };
 
     render(){
         const  {article, isOpen, toggleOpen} = this.props;
+        console.log('__', 'update');
         return (
             <div ref={this.setContainerRef}>
                 <h3>{ article.title }</h3>

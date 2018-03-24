@@ -13,7 +13,6 @@ class Article extends Component {
     };
 
     componentWillMount() {
-        console.log("__", 'mounting')
     }
 
     render(){
@@ -31,11 +30,9 @@ class Article extends Component {
 
     setContainerRef = ref => {
         this.container = ref;
-        console.log("__", ref)
     };
 
     componentDidMount() {
-        console.log("__", 'mounted')
     }
 
     getBody() {

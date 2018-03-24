@@ -6,6 +6,7 @@ import UserForm from './UserForm';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import Filters from './Filters';
+import Counter from './Counter';
 
 
 
@@ -19,6 +20,7 @@ class App extends Component {
 
         return (
             <div>
+                <Counter/>
                 <UserForm/>
                 <Filters articles={articles}/>
                 <ArticleList articles={this.props.articles}/>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
+import CommentForm from './ComponentForm/insex'
 import toggleOpen from '../decorators/toggleOpen';
 
 
@@ -18,11 +19,19 @@ class CommentList extends Component {
         const {comments, isOpen} = this.props;
         if(!isOpen) return null;
         const commentElement = comments.map((comment) => <li key={comment.id}><Comment comment={comment}/></li> );
-        if(!comments.length) return <p>No comments yet</p>;
+        if(!comments.length) return (
+            <div>
+                <p>No comment yet</p>
+                <CommentForm/>
+            </div>
+        );
         return  (
-            <ul>
-                {commentElement}
-            </ul>
+            <div>
+                <ul>
+                    {commentElement}
+                </ul>
+                <CommentForm/>
+            </div>
         )
     }
 }
